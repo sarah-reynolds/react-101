@@ -1,3 +1,6 @@
+const image1 = 'http://www.marshu.com/articles/images-website/articles/presidents-on-coins/half-dollar-coin-tail.jpg'
+const image2 = 'http://www.marshu.com/articles/images-website/articles/presidents-on-coins/quarter-coin-head.jpg'
+
 var Application = React.createClass({
 	getInitialState: function(){
 		return{
@@ -5,8 +8,14 @@ var Application = React.createClass({
 		}
 	},
 	flipCoin: function(){
+		var checkState = this.state.image
+		if(checkState == image1){
+			checkState = image2
+		}else{
+			checkState = image1
+		}
 		this.setState({
-			image: 'http://www.marshu.com/articles/images-website/articles/presidents-on-coins/quarter-coin-head.jpg'
+			image: checkState
 		})
 	},
 	render: function(){
@@ -20,7 +29,7 @@ var Application = React.createClass({
 });
 
 ReactDOM.render(
-	<Application imageSrc = 'http://www.marshu.com/articles/images-website/articles/presidents-on-coins/half-dollar-coin-tail.jpg' />,
+	<Application />,
 	document.getElementById('container')
 
 );
