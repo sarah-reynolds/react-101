@@ -11,8 +11,9 @@ function formatDate(protoDate){
 	var day = protoDate.getDate();
 	var month = protoDate.getMonth();
 	var year = protoDate.getFullYear();
+	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	return(
-		<div className="Comment-date">{"Month: " + month} {"Day: " + day} {"Year: " + year}</div>
+		<div className="Comment-date">{months[month]+" "} {day+", "} {year}</div>
 	)
 }
 
